@@ -4,18 +4,18 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Welcome to Astro.">
   <main
-    class="flex h-full w-full max-w-screen-lg flex-col items-center justify-center"
+    class="relative z-0 grid h-full w-full max-w-screen-lg grid-rows-[350px,100px] content-center overflow-hidden"
   >
-    <section class="flex flex-col items-center gap-5 pb-16">
-      <h1
-        class="text-center text-[clamp(2.5rem,1.6713rem+4.4199vw,4.5rem)] font-bold"
-      >
+    <section
+      class="row-start-1 flex flex-col items-center gap-5 self-end text-center"
+    >
+      <h1 class="text-[clamp(2.5rem,1.6713rem+4.4199vw,4.5rem)] font-bold">
         Hi, I'm Clara.
       </h1>
       <div class="flex items-center gap-1 text-lg font-semibold">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-current-location"
+          class=""
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -30,12 +30,25 @@ import Layout from "../layouts/Layout.astro";
             d="M12 2l0 2"></path><path d="M12 20l0 2"></path><path
             d="M20 12l2 0"></path><path d="M2 12l2 0"></path></svg
         >
+
         <p>Northern Ireland</p>
       </div>
-      <p class="max-w-lg text-center text-lg">
+      <p class="max-w-lg text-lg">
         I'm a full-stack developer who loves typescript and learning new
         technologies!
       </p>
+    </section>
+
+    <section class="row-start-2 flex items-end justify-center">
+      <div class="grid w-40 grid-cols-7 justify-items-center gap-2">
+        <div class="aspect-square w-full rounded-full bg-red-500"></div>
+        <div class="aspect-square w-full rounded-full bg-blue-500"></div>
+        <div class="aspect-square w-full rounded-full bg-green-300"></div>
+        <div class="aspect-square w-full rounded-full bg-purple-500"></div>
+        <div class="aspect-square w-full rounded-full bg-yellow-400"></div>
+        <div class="aspect-square w-full rounded-full bg-teal-400"></div>
+        <div class="aspect-square w-full rounded-full bg-pink-400"></div>
+      </div>
     </section>
   </main>
 </Layout>
