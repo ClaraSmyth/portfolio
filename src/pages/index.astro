@@ -1,99 +1,46 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HomeSvg from "../components/HomeSvg.astro";
-
-const colors = {
-  typescript: "#3178C6",
-  javascript: "#F7DF1E",
-  html: "#E34F26",
-  css: "#1572B6",
-  sass: "#CC6699",
-  react: "#61DAFB",
-  nextjs: "#000000",
-};
 ---
 
-<Layout title="Welcome to Astro.">
-  <main
-    class="relative z-0 grid h-full max-h-[800px] w-full max-w-screen-lg grid-rows-[350px,100px] content-center overflow-hidden"
-  >
-    <section
-      class="row-start-1 flex flex-col items-center gap-5 self-end text-center"
-    >
-      <h1 class="text-[clamp(2.5rem,1.6713rem+4.4199vw,4.5rem)] font-bold">
-        Hi, I'm Clara.
-      </h1>
-      <div class="flex items-center gap-1 text-lg font-semibold">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class=""
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="currentColor"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-            d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path
-            d="M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0"></path><path
-            d="M12 2l0 2"></path><path d="M12 20l0 2"></path><path
-            d="M20 12l2 0"></path><path d="M2 12l2 0"></path></svg
-        >
+<Layout title="Welcome to Astro." />
+<main
+  class="grid h-screen w-full max-w-screen-lg content-center justify-items-center"
+>
+  <section class="grid h-min justify-items-center gap-5 text-center">
+    <h1 class="text-[clamp(2.5rem,1.6713rem+4.4199vw,4.5rem)] font-bold">
+      Hi, I'm Clara.
+    </h1>
 
-        <p>Northern Ireland</p>
-      </div>
-      <p class="max-w-lg text-lg">
-        I'm a full-stack developer who loves typescript and learning new
-        technologies!
-      </p>
-    </section>
+    <div class="flex items-center gap-1 text-lg font-semibold">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class=""
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+          d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path
+          d="M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0"></path><path
+          d="M12 2l0 2"></path><path d="M12 20l0 2"></path><path d="M20 12l2 0"
+        ></path><path d="M2 12l2 0"></path></svg
+      >
 
-    <section class="row-start-2 flex items-end justify-center">
-      <div class="grid w-40 grid-cols-7 justify-items-center gap-2">
-        <div
-          class="aspect-square w-full rounded-full bg-red-500"
-          style={`background: ${colors.html}`}
-        >
-        </div>
-        <div
-          class="aspect-square w-full rounded-full"
-          style={`background: ${colors.typescript}`}
-        >
-        </div>
-        <div
-          class="aspect-square w-full rounded-full bg-green-300"
-          style={`background: ${colors.javascript}`}
-        >
-        </div>
-        <div
-          class="aspect-square w-full rounded-full bg-purple-500"
-          style={`background: ${colors.nextjs}`}
-        >
-        </div>
-        <div
-          class="aspect-square w-full rounded-full bg-yellow-400"
-          style={`background: ${colors.react}`}
-        >
-        </div>
-        <div
-          class="aspect-square w-full rounded-full bg-teal-400"
-          style={`background: ${colors.sass}`}
-        >
-        </div>
-        <div
-          class="aspect-square w-full rounded-full bg-pink-400"
-          style={`background: ${colors.css}`}
-        >
-        </div>
-      </div>
-    </section>
+      <p>Northern Ireland</p>
+    </div>
 
-    <section
-      class="absolute -z-10 row-span-2 row-start-1 h-full w-[1024px] max-w-5xl justify-self-center overflow-hidden"
-    >
+    <p class="max-w-lg text-lg">
+      I'm a full-stack developer who loves typescript and learning new
+      technologies!
+    </p>
+
+    <div class="absolute -z-10 -mt-28">
       <HomeSvg />
-    </section>
-  </main>
-</Layout>
+    </div>
+  </section>
+</main>
