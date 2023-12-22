@@ -3,93 +3,47 @@ import Layout from "../layouts/Layout.astro";
 import HomeSvg from "../components/HomeSvg.astro";
 ---
 
-<Layout title="Welcome to Astro." />
-<main
-  class="grid h-screen min-h-[600px] w-full max-w-screen-lg content-center justify-items-center overflow-hidden"
->
-  <section
-    class="relative grid content-center justify-items-center gap-5 text-center"
+<Layout title="Welcome to Astro.">
+  <main
+    class="relative grid h-screen min-h-[800px] w-full max-w-screen-lg content-center justify-items-center"
   >
-    <h1 class="text-[clamp(2.5rem,1.6713rem+4.4199vw,4.5rem)] font-bold">
-      Hi, I'm Clara.
-    </h1>
+    <section
+      class="relative grid content-center justify-items-center gap-5 text-center"
+    >
+      <h1 class="text-[clamp(2.5rem,1.6713rem+4.4199vw,4.5rem)] font-bold">
+        Hi, I'm Clara.
+      </h1>
 
-    <div class="flex items-center gap-1 text-lg font-semibold">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class=""
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        stroke-width="2"
-        stroke="currentColor"
-        fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-          d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path
-          d="M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0"></path><path
-          d="M12 2l0 2"></path><path d="M12 20l0 2"></path><path d="M20 12l2 0"
-        ></path><path d="M2 12l2 0"></path></svg
-      >
+      <div class="flex items-center gap-1 text-lg font-semibold">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class=""
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path
+            d="M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0"></path><path
+            d="M12 2l0 2"></path><path d="M12 20l0 2"></path><path
+            d="M20 12l2 0"></path><path d="M2 12l2 0"></path></svg
+        >
 
-      <p>Northern Ireland</p>
-    </div>
+        <p>Northern Ireland</p>
+      </div>
 
-    <p class="max-w-lg text-lg">
-      I'm a full-stack developer who loves typescript and learning new
-      technologies!
-    </p>
+      <p class="max-w-lg text-lg">
+        I'm a full-stack developer who loves typescript and learning new
+        technologies!
+      </p>
+    </section>
 
-    <div class="absolute -top-28 -z-10 grid">
-      <HomeSvg />
+    <HomeSvg />
+  </main>
 
-      <svg
-        class="absolute top-[450px] h-[calc(50vh-44%)] min-h-[4.875rem] self-center justify-self-center"
-        width="150"
-        preserveAspectRatio="none"
-        viewBox="0 0 150 217"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M3 3V214"
-          stroke="#E34F26"
-          stroke-width="5"
-          stroke-linecap="square"></path>
-        <path
-          d="M27 3V214"
-          stroke="#3178C6"
-          stroke-width="5"
-          stroke-linecap="square"></path>
-        <path
-          d="M51 3V214"
-          stroke="#F7DF1E"
-          stroke-width="5"
-          stroke-linecap="square"></path>
-        <path
-          d="M75 3V214"
-          stroke="black"
-          stroke-width="5"
-          stroke-linecap="square"></path>
-        <path
-          d="M99 3V214"
-          stroke="#61DAFB"
-          stroke-width="5"
-          stroke-linecap="square"></path>
-        <path
-          d="M123 3V214"
-          stroke="#CC6699"
-          stroke-width="5"
-          stroke-linecap="square"></path>
-        <path
-          d="M147 3V214"
-          stroke="#1572B6"
-          stroke-width="5"
-          stroke-linecap="square"></path>
-      </svg>
-    </div>
-  </section>
-</main>
-
-<div class="grid h-screen w-full outline outline-black/10"></div>
+  <div class="h-[500vh]"></div>
+</Layout>
