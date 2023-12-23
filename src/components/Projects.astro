@@ -1,0 +1,54 @@
+---
+import ProjectsIntroSvg from "../components/ProjectsIntroSvg.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = ["card1", "card2", "card3"];
+---
+
+<section
+  class="relative mt-[220px] grid h-max min-h-[800px] w-full grid-rows-4 justify-center justify-items-center overflow-x-clip"
+>
+  <div
+    class="pointer-events-none sticky top-0 z-50 col-start-1 col-end-1 row-start-1 grid w-screen justify-center"
+  >
+    <ProjectsIntroSvg />
+  </div>
+
+  {
+    projects.map((item, index) => (
+      <div
+        id={item}
+        style={{ gridRowStart: index + 1 }}
+        class="sticky top-0 z-10 col-start-1 col-end-1 grid h-screen w-full max-w-screen-lg items-center px-6"
+      >
+        <ProjectCard id={index} />
+      </div>
+    ))
+  }
+</section>
+
+<script>
+  import { scroll, animate } from "motion";
+
+  /**
+   * Remember to set the pathLength="1" SVG attribute on
+   * the elements you want to draw. This makes it easy
+   * to use the same animation logic for elements of a
+   * different path length.
+   */
+
+  const projects = ["card1", "card2", "card3"];
+
+  projects.forEach((id, index) => {
+    scroll(
+      animate(`#${id}`, {
+        scale: [1.2, 1],
+        visibility: ["visible", "visible"],
+      }),
+      {
+        target: document.getElementById(id)!,
+        offset: ["start end", "center center"],
+      },
+    );
+  });
+</script>
