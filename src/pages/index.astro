@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HomeSvg from "../components/HomeSvg.astro";
-import ProjectsIntroSvg from "../components/ProjectsIntroSvg.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -46,58 +46,7 @@ import ProjectsIntroSvg from "../components/ProjectsIntroSvg.astro";
     <HomeSvg />
   </main>
 
-  <section
-    class="relative mt-[220px] grid h-[200vh] min-h-[800px] w-full auto-rows-min justify-items-center overflow-x-clip"
-  >
-    <div
-      class="sticky top-0 z-50 grid w-full max-w-screen-lg justify-items-center"
-    >
-      <ProjectsIntroSvg />
-    </div>
+  <Projects />
 
-    <div
-      class="sticky top-0 z-10 grid h-screen w-full max-w-screen-lg items-center px-4"
-    >
-      <div
-        class="grid h-[70%] w-full grid-cols-2 items-center gap-4 rounded-3xl px-4 shadow-2xl"
-      >
-        <div
-          class="flex h-60 w-96 flex-col justify-center gap-4 justify-self-end text-end"
-        >
-          <h2 class="text-2xl font-semibold">Random Title</h2>
-          <div class="relative flex h-6 justify-end">
-            <svg
-              class="icon icon-tabler icon-tabler-brand-html5 absolute -top-2 aspect-square w-10"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-                d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z"></path><path
-                d="M15.5 8h-7l.5 4h6l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5"
-              ></path></svg
-            >
-          </div>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et vel
-            nam, consectetur ipsam, qui nihil repudiandae sunt repellat
-            architecto
-          </p>
-          <div class="flex justify-end gap-4">
-            <button
-              class="rounded-lg bg-black px-4 py-1 font-semibold text-white"
-              >Live</button
-            >
-            <button
-              class="rounded-lg bg-black px-4 py-1 font-semibold text-white"
-              >Code</button
-            >
-          </div>
-        </div>
-        <div class="aspect-video w-full rounded-2xl bg-black/10"></div>
-      </div>
-    </div>
-  </section>
+  <div class="h-screen w-full"></div>
 </Layout>
