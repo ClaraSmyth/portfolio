@@ -1,8 +1,9 @@
 <div
-  id="homeSvg"
+  id="homeSvgContainer"
   class="absolute top-0 -z-10 grid h-full w-full items-center justify-items-center overflow-x-clip"
 >
   <svg
+    id="homeMainSvg"
     class="absolute mb-12"
     width="1024"
     height="800"
@@ -10,7 +11,7 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g id="HomeSVG">
+    <g>
       <g id="Css">
         <path
           class="Line"
@@ -242,8 +243,8 @@
   </svg>
 
   <svg
-    id="homeLines"
-    class="absolute bottom-[-1px] h-[calc(50%-210px)]"
+    id="homeLinesSvg"
+    class="absolute bottom-[-1px] h-[calc(50%-210px)] min-h-[190px]"
     width="1024"
     viewBox="0 0 1024 217"
     preserveAspectRatio="none"
@@ -325,10 +326,10 @@
 
   timeline(
     [
-      [".Line", draw(1), { duration: 0.8, delay: 1 }],
-      [".LineCover", draw(1), { duration: 0.8, at: "-0.7" }],
-      [".Part1", draw(1), { duration: 0.8, at: "-0.3" }],
-      [".Part2", draw(1), { duration: 0.8, at: "0" }],
+      ["#homeMainSvg .Line", draw(1), { duration: 0.8, delay: 1 }],
+      ["#homeMainSvg .LineCover", draw(1), { duration: 0.8, at: "-0.7" }],
+      ["#homeMainSvg .Part1", draw(1), { duration: 0.8, at: "-0.3" }],
+      ["#homeMainSvg .Part2", draw(1), { duration: 0.8, at: "0" }],
     ],
     {
       defaultOptions: {
@@ -338,12 +339,12 @@
   );
 
   scroll(
-    animate("#homeLines path", {
+    animate("#homeLinesSvg path", {
       strokeDashoffset: [1, 0],
       visibility: ["visible", "visible"],
     }),
     {
-      target: document.getElementById("homeSvg")!,
+      target: document.getElementById("homeSvgContainer")!,
       offset: ["start start", "end center"],
     },
   );
