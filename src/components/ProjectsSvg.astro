@@ -1,5 +1,5 @@
 <div
-  class="pointer-events-none sticky top-0 z-50 col-start-1 col-end-1 row-start-1 grid w-screen justify-center"
+  class="pointer-events-none sticky z-50 top-0 col-start-1 col-end-1 row-start-1 grid w-screen justify-center"
 >
   <div
     class="absolute top-[-220px] grid h-screen min-h-[800px] w-screen justify-center overflow-x-clip"
@@ -124,62 +124,6 @@
     </div>
   </div>
 
-  <div
-    id="projectsOutroLines"
-    class="absolute bottom-0 z-50 grid h-[calc(50%+200px)] w-full justify-center justify-items-center overflow-x-clip"
-  >
-    <svg
-      class="h-full"
-      width="1024"
-      preserveAspectRatio="none"
-      viewBox="0 0 1024 565"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M115 3V562"
-        stroke="#E34F26"
-        stroke-width="5"
-        stroke-linecap="square"
-        pathLength="1"></path>
-      <path
-        d="M139 3V562"
-        stroke="#3178C6"
-        stroke-width="5"
-        stroke-linecap="square"
-        pathLength="1"></path>
-      <path
-        d="M163 3V562"
-        stroke="#F7DF1E"
-        stroke-width="5"
-        stroke-linecap="square"
-        pathLength="1"></path>
-      <path
-        d="M187 3V562"
-        stroke="black"
-        stroke-width="5"
-        stroke-linecap="square"
-        pathLength="1"></path>
-      <path
-        d="M211 3V562"
-        stroke="#61DAFB"
-        stroke-width="5"
-        stroke-linecap="square"
-        pathLength="1"></path>
-      <path
-        d="M235 3V562"
-        stroke="#CC6699"
-        stroke-width="5"
-        stroke-linecap="square"
-        pathLength="1"></path>
-      <path
-        d="M259 3V562"
-        stroke="#1572B6"
-        stroke-width="5"
-        stroke-linecap="square"
-        pathLength="1"></path>
-    </svg>
-  </div>
 </div>
 
 <style>
@@ -234,14 +178,4 @@
     },
   );
 
-  scroll(
-    animate("#projectsOutroLines svg path", {
-      strokeDashoffset: [1, 0],
-      visibility: ["visible", "visible"],
-    }),
-    {
-      target: document.querySelector("#projectsOutroLines")!,
-      offset: ["end end", "end center"],
-    },
-  );
-</script>
+  </script>

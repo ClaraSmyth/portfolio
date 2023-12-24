@@ -1,0 +1,79 @@
+<div
+  id="projectsOutroLines"
+  class="absolute bottom-0 grid h-[calc(50vh)] w-full justify-center justify-items-center overflow-x-clip"
+>
+  <svg
+    class="h-full"
+    width="1024"
+    preserveAspectRatio="none"
+    viewBox="0 0 1024 565"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M115 3V562"
+      stroke="#E34F26"
+      stroke-width="5"
+      stroke-linecap="square"
+      pathLength="1"></path>
+    <path
+      d="M139 3V562"
+      stroke="#3178C6"
+      stroke-width="5"
+      stroke-linecap="square"
+      pathLength="1"></path>
+    <path
+      d="M163 3V562"
+      stroke="#F7DF1E"
+      stroke-width="5"
+      stroke-linecap="square"
+      pathLength="1"></path>
+    <path
+      d="M187 3V562"
+      stroke="black"
+      stroke-width="5"
+      stroke-linecap="square"
+      pathLength="1"></path>
+    <path
+      d="M211 3V562"
+      stroke="#61DAFB"
+      stroke-width="5"
+      stroke-linecap="square"
+      pathLength="1"></path>
+    <path
+      d="M235 3V562"
+      stroke="#CC6699"
+      stroke-width="5"
+      stroke-linecap="square"
+      pathLength="1"></path>
+    <path
+      d="M259 3V562"
+      stroke="#1572B6"
+      stroke-width="5"
+      stroke-linecap="square"
+      pathLength="1"></path>
+  </svg>
+</div>
+
+<style>
+  path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    /* visibility: hidden; */
+  }
+</style>
+
+<script>
+  import { scroll, animate } from "motion";
+
+  scroll(
+    animate("#projectsOutroLines svg path", {
+      strokeDashoffset: [1, 0],
+      visibility: ["visible", "visible"],
+    }),
+    {
+      target: document.querySelector("#projectsOutroLines")!,
+      offset: ["start center", "end center"],
+    },
+  );
+</script>
