@@ -1,5 +1,5 @@
 ---
-import ProjectsIntroSvg from "../components/ProjectsIntroSvg.astro";
+import ProjectsSvg from "./ProjectsSvg.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 
 const projects = ["card1", "card2", "card3"];
@@ -8,11 +8,7 @@ const projects = ["card1", "card2", "card3"];
 <section
   class="relative mt-[220px] grid h-max min-h-[800px] w-full grid-rows-4 justify-center justify-items-center overflow-x-clip"
 >
-  <div
-    class="pointer-events-none sticky top-0 z-50 col-start-1 col-end-1 row-start-1 grid w-screen justify-center"
-  >
-    <ProjectsIntroSvg />
-  </div>
+  <ProjectsSvg />
 
   {
     projects.map((item, index) => (
