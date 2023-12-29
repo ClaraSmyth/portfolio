@@ -2,7 +2,26 @@
 import ProjectsSvg from "./ProjectsSvg.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 
-const projects = ["card1", "card2", "card3"];
+const projects = [
+  {
+    title: "Random Title",
+    desc: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+    liveLink: "https://google.com",
+    repoLink: "https://google.com",
+  },
+  {
+    title: "Random Title",
+    desc: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+    liveLink: "https://google.com",
+    repoLink: "https://google.com",
+  },
+  {
+    title: "Random Title",
+    desc: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+    liveLink: "https://google.com",
+    repoLink: "https://google.com",
+  },
+];
 ---
 
 <section
@@ -11,13 +30,13 @@ const projects = ["card1", "card2", "card3"];
   <ProjectsSvg />
 
   {
-    projects.map((item, index) => (
+    projects.map((project, index) => (
       <div
-        id={item}
+        id={`card${index}`}
         style={{ gridRowStart: index + 1 }}
         class="sticky top-0 z-10 col-start-1 col-end-1 grid h-screen w-full max-w-screen-lg items-center px-6"
       >
-        <ProjectCard id={index} />
+        <ProjectCard index={index} project={project} />
       </div>
     ))
   }
