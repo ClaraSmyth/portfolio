@@ -52,16 +52,14 @@ const projects = [
    * different path length.
    */
 
-  const projects = ["card1", "card2", "card3"];
-
-  projects.forEach((id, index) => {
+  ["card0", "card1", "card2"].forEach((card) => {
     scroll(
-      animate(`#${id}`, {
+      animate(`#${card}`, {
         scale: [1.2, 1],
         visibility: ["visible", "visible"],
       }),
       {
-        target: document.getElementById(id)!,
+        target: document.getElementById(card)!,
         offset: ["start end", "center center"],
       },
     );
