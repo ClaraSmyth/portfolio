@@ -1,13 +1,12 @@
 ---
 import ProjectsSvg from "./ProjectsSvg.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import ProjectsSvgOutro from "./ProjectsSvgOutro.astro";
 
 const projects = ["card1", "card2", "card3"];
 ---
 
 <section
-  class="relative mt-[220px] grid h-max min-h-[800px] w-full grid-rows-3 justify-center justify-items-center overflow-x-clip"
+  class="relative mt-[220px] grid h-max min-h-min w-full grid-cols-1 grid-rows-3 justify-center justify-items-center overflow-x-clip"
 >
   <ProjectsSvg />
 
@@ -22,8 +21,6 @@ const projects = ["card1", "card2", "card3"];
       </div>
     ))
   }
-
-  <ProjectsSvgOutro />
 </section>
 
 <script>
