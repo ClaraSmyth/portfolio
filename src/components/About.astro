@@ -1,0 +1,118 @@
+---
+import AboutSvg from "../components/AboutSvg.astro";
+import AboutScroller from "../components/AboutScroller.astro";
+---
+
+<div class="relative grid h-screen w-full items-center justify-items-center">
+  <div
+    class="relative grid h-1/2 max-h-[800px] w-full max-w-5xl items-center bg-gray-100 pl-80"
+  >
+    <div class="flex w-2/3 flex-col gap-2">
+      <h2 class="text-3xl font-semibold">A little about me.</h2>
+      <p>
+        I’m a self taught developer who started learning to code back in May
+        2022 by following TheOdinProject’s open source curriculum.
+        TheOdinProject really ignited a deep passion for the web and a desire to
+        learn about as many new technologies as possible.
+      </p>
+
+      <p>
+        Outside of web dev, im a passionate gamer, guitarist and animal lover.
+      </p>
+    </div>
+
+    <div class="w-2/3">
+      <h3 class="text-2xl font-semibold">Contact.</h3>
+      <div class="flex items-center gap-2">
+        <p>clarasmyth.work@gmail.com</p>
+        <button
+          id="copyButton"
+          class="relative flex size-6 items-center justify-center rounded hover:bg-gray-300 active:bg-gray-200"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-clipboard-copy absolute"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h3m9 -9v-5a2 2 0 0 0 -2 -2h-2"
+            ></path><path
+              d="M13 17v-1a1 1 0 0 1 1 -1h1m3 0h1a1 1 0 0 1 1 1v1m0 3v1a1 1 0 0 1 -1 1h-1m-3 0h-1a1 1 0 0 1 -1 -1v-1"
+            ></path><path
+              d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
+            ></path></svg
+          >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-clipboard-check absolute hidden"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"
+            ></path><path
+              d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
+            ></path><path d="M9 14l2 2l4 -4"></path></svg
+          >
+        </button>
+      </div>
+    </div>
+
+    <AboutScroller />
+  </div>
+
+  <div class="absolute flex w-full max-w-screen-lg gap-2 self-end pb-2 pl-80">
+    <p class="text-sm">
+      Designed & Built by <span class="font-semibold">me!</span>
+    </p>
+
+    <a
+      href="https://github.com/clarasmyth"
+      class="flex items-center gap-1 text-sm font-semibold"
+    >
+      <p>ClaraSmyth</p>
+      <div class="flex items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-brand-github"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+          ></path></svg
+        >
+      </div>
+    </a>
+  </div>
+
+  <AboutSvg />
+</div>
+
+<script>
+  const copyButton = document.getElementById("copyButton");
+
+  copyButton?.addEventListener("click", () => {
+    navigator.clipboard.writeText("clarasmyth.work@gmail.com");
+
+    copyButton?.firstElementChild?.classList.add("hidden");
+
+    copyButton?.lastElementChild?.classList.remove("hidden");
+  });
+</script>
