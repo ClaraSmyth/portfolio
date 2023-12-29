@@ -1,22 +1,28 @@
 ---
 interface Props {
-  id: number;
+  index: number;
+  project: {
+    title: string;
+    desc: string;
+    liveLink: string;
+    repoLink: string;
+  };
 }
 
-const { id } = Astro.props;
+const { index, project } = Astro.props;
 ---
 
 <div
   style={{
-    marginTop: `${id * 20}px`,
-    marginLeft: `${id * 20}px`,
+    marginTop: `${index * 20}px`,
+    marginLeft: `${index * 20}px`,
   }}
   class="grid h-[600px] w-full grid-cols-2 items-center gap-4 justify-self-center rounded-3xl bg-gray-100 px-4 shadow-[rgba(149,157,165,0.2)_0px_8px_24px]"
 >
   <div
     class="flex h-60 w-96 flex-col justify-center gap-4 justify-self-end text-end"
   >
-    <h2 class="text-2xl font-semibold">Random Title</h2>
+    <h2 class="text-2xl font-semibold">{project.title}</h2>
     <div class="relative flex h-6 justify-end">
       <svg
         class="icon icon-tabler icon-tabler-brand-html5 absolute -top-2 aspect-square w-10"
@@ -32,15 +38,16 @@ const { id } = Astro.props;
       >
     </div>
     <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et vel nam,
-      consectetur ipsam, qui nihil repudiandae sunt repellat architecto
+      {project.desc}
     </p>
     <div class="flex justify-end gap-4">
-      <button class="rounded-lg bg-black px-4 py-1 font-semibold text-white"
-        >Live</button
+      <a
+        href={project.liveLink}
+        class="rounded-lg bg-black px-4 py-1 font-semibold text-white">Live</a
       >
-      <button class="rounded-lg bg-black px-4 py-1 font-semibold text-white"
-        >Code</button
+      <a
+        href={project.repoLink}
+        class="rounded-lg bg-black px-4 py-1 font-semibold text-white">Code</a
       >
     </div>
   </div>
