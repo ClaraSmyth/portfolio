@@ -4,22 +4,40 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 const projects = [
   {
-    title: "Random Title",
-    desc: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    liveLink: "https://google.com",
-    repoLink: "https://google.com",
+    title: "Game Store",
+    desc: "A mock game store with a shopping cart. Users can search for any game. Gets game data from the RAWG game database API.",
+    liveLink: "https://clarasmyth.github.io/shopping-cart",
+    repoLink: "https://github.com/ClaraSmyth/shopping-cart",
+    imgPath: "/src/assets/project-1.webp",
+    icons: {
+      icon1: "TypeScript",
+      icon2: "Tailwind",
+      icon3: "React",
+    },
   },
   {
-    title: "Random Title",
-    desc: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    liveLink: "https://google.com",
-    repoLink: "https://google.com",
+    title: "CV Builder",
+    desc: "A CV builder application. Users can create a customised CV with optional picture upload and ability to download the finished CV.",
+    liveLink: "https://clarasmyth.github.io/cv-application/",
+    repoLink: "https://github.com/ClaraSmyth/cv-application",
+    imgPath: "/src/assets/project-2.webp",
+    icons: {
+      icon1: "React",
+      icon2: "Sass",
+      icon3: null,
+    },
   },
   {
-    title: "Random Title",
-    desc: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    liveLink: "https://google.com",
-    repoLink: "https://google.com",
+    title: "Battleship",
+    desc: "A classic battleship game. Players can drag and drop their ships or randomise them and play against a relatively smart AI.",
+    liveLink: "https://clarasmyth.github.io/battleship/",
+    repoLink: "https://github.com/ClaraSmyth/battleship",
+    imgPath: "/src/assets/project-3.webp",
+    icons: {
+      icon1: "Html",
+      icon2: "Sass",
+      icon3: "JavaScript",
+    },
   },
 ];
 ---
@@ -43,14 +61,7 @@ const projects = [
 </section>
 
 <script>
-  import { scroll, animate } from "motion";
-
-  /**
-   * Remember to set the pathLength="1" SVG attribute on
-   * the elements you want to draw. This makes it easy
-   * to use the same animation logic for elements of a
-   * different path length.
-   */
+  import { scroll, animate, inView, timeline } from "motion";
 
   ["card0", "card1", "card2"].forEach((card) => {
     scroll(
@@ -64,4 +75,65 @@ const projects = [
       },
     );
   });
+
+  ["card1", "card2"].forEach((card) => {
+    scroll(
+      animate(`#${card === "card1" ? "card0" : "card1"}`, {
+        scale: [1, 0.8],
+        visibility: ["visible", "visible"],
+      }),
+      {
+        target: document.getElementById(card)!,
+        offset: ["start center", "center center"],
+      },
+    );
+  });
+
+  const draw = (progress: number) => ({
+    // This property makes the line "draw" in when animated
+    strokeDashoffset: 1 - progress,
+
+    // Each line will be hidden until it starts drawing
+    // to fix a bug in Safari where the line can be
+    // partially visible even when progress is at 0
+    visibility: "visible",
+  });
+
+  ["#projectCardSvg0", "#projectCardSvg1", "#projectCardSvg2"].forEach(
+    (card) => {
+      inView(
+        card,
+        () => {
+          [".Icon1", ".Icon2", ".Icon3"].forEach((icon, index) => {
+            timeline(
+              [
+                [
+                  `${card} ${icon} .Line1`,
+                  draw(1),
+                  { duration: 0.8, delay: index / 2 },
+                ],
+                [
+                  `${card} ${icon} .Line2`,
+                  draw(1),
+                  { duration: 0.8, at: "-0.7" },
+                ],
+                [
+                  `${card} ${icon} .Part1`,
+                  draw(1),
+                  { duration: 0.8, at: "-0.3" },
+                ],
+                [`${card} ${icon} .Part2`, draw(1), { duration: 0.8, at: "0" }],
+              ],
+              {
+                defaultOptions: {
+                  easing: "linear",
+                },
+              },
+            );
+          });
+        },
+        { margin: "0px 0px -50% 0px", amount: 0.45 },
+      );
+    },
+  );
 </script>
