@@ -1,8 +1,3 @@
-<div  align=center>
-	<h1>Portfolio</h1>
-	<h3><b><a href="https://clarasmyth.dev">Visit Site</a></b></h3>
-</div>
-
 ## Description
 
 Just my Portfolio website
