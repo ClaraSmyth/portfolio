@@ -7,7 +7,7 @@ const { index } = Astro.props;
 ---
 
 <div
-  class="pointer-events-none absolute -ml-[24px] grid items-center justify-items-center justify-self-center"
+  class="pointer-events-none absolute grid items-center justify-items-center justify-self-center max-[900px]:hidden"
 >
   {
     index === 0 && (
@@ -349,6 +349,6 @@ const { index } = Astro.props;
   path {
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
-    /* visibility: hidden; */
+    visibility: hidden;
   }
 </style>
