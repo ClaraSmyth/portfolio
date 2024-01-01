@@ -1,11 +1,11 @@
 <div
   id="scrollerContainer"
-  class="absolute right-0 top-0 grid h-full grid-rows-[150%,150%] overflow-hidden"
+  class="col-start-2 row-span-2 row-start-1 grid h-full gap-2 overflow-hidden max-[550px]:col-start-1 max-[550px]:row-span-1 max-[550px]:row-start-2 max-[550px]:mt-8 max-[550px]:w-full max-[550px]:grid-cols-[150%,150%] min-[550px]:grid-rows-[150%,150%]"
 >
   {
-    [1, 2].map((num) => (
-      <div class="scroller grid h-full content-around gap-2">
-        <div class="group flex h-min items-center gap-1">
+    [1, 2].map(() => (
+      <div class="scroller grid h-full content-around gap-2 max-[550px]:grid-cols-10">
+        <div class="group grid h-min grid-cols-1 place-items-center gap-1 min-[550px]:grid-cols-[repeat(2,min-content)]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-brand-html5"
@@ -24,12 +24,12 @@
               <path d="M15.5 8h-7l.5 4h6l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />
             </>
           </svg>
-          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100">
+          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100">
             Html
           </p>
         </div>
 
-        <div class="group flex h-min items-center gap-1">
+        <div class="group grid h-min grid-cols-1 place-items-center gap-1 min-[550px]:grid-cols-[repeat(2,min-content)]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-brand-css3"
@@ -48,12 +48,12 @@
               <path d="M8.5 8h7l-4.5 4h4l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />
             </>
           </svg>
-          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100">
+          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100">
             Css
           </p>
         </div>
 
-        <div class="group flex h-min items-center gap-1">
+        <div class="group grid h-min grid-cols-1 place-items-center gap-1 min-[550px]:grid-cols-[repeat(2,min-content)]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-brand-sass"
@@ -72,12 +72,12 @@
               <path d="M12 10.523c2.46 -.826 4 -.826 4 -2.155c0 -1.366 -1.347 -1.366 -2.735 -1.366c-1.91 0 -3.352 .49 -4.537 1.748c-.848 .902 -1.027 2.449 -.153 3.307c.973 .956 3.206 1.789 2.884 3.493c-.233 1.235 -1.469 1.823 -2.617 1.202c-.782 -.424 -.454 -1.746 .626 -2.512s2.822 -.992 4.1 -.24c.98 .575 1.046 1.724 .434 2.193" />
             </>
           </svg>
-          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100">
+          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100">
             Sass
           </p>
         </div>
 
-        <div class="group flex h-min items-center gap-1">
+        <div class="group grid h-min grid-cols-1 place-items-center gap-1 min-[550px]:grid-cols-[repeat(2,min-content)]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-brand-tailwind"
@@ -95,12 +95,12 @@
               <path d="M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z" />
             </>
           </svg>
-          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100">
+          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100">
             Tailwind
           </p>
         </div>
 
-        <div class="group flex h-min items-center gap-1">
+        <div class="group grid h-min grid-cols-1 place-items-center gap-1 min-[550px]:grid-cols-[repeat(2,min-content)]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-brand-javascript"
@@ -120,12 +120,12 @@
               <path d="M16.5 8h-2.5a.5 .5 0 0 0 -.5 .5v3a.5 .5 0 0 0 .5 .5h1.423a.5 .5 0 0 1 .495 .57l-.418 2.93l-2 .5" />
             </>
           </svg>
-          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100">
+          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100">
             JavaScript
           </p>
         </div>
 
-        <div class="group flex h-min items-center gap-1">
+        <div class="group grid h-min grid-cols-1 place-items-center gap-1 min-[550px]:grid-cols-[repeat(2,min-content)]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-brand-typescript"
@@ -146,12 +146,12 @@
               <path d="M21 19v-14a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2z" />
             </>
           </svg>
-          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100">
+          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100">
             TypeScript
           </p>
         </div>
 
-        <div class="group flex h-min items-center gap-1">
+        <div class="group grid h-min grid-cols-1 place-items-center gap-1 min-[550px]:grid-cols-[repeat(2,min-content)]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-brand-react"
@@ -175,12 +175,12 @@
               <path d="M11.5 12.866a1 1 0 1 0 1 -1.732a1 1 0 0 0 -1 1.732z" />
             </>
           </svg>
-          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100">
+          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100">
             React
           </p>
         </div>
 
-        <div class="group flex h-min items-center gap-1">
+        <div class="group grid h-min grid-cols-1 place-items-center gap-1 min-[550px]:grid-cols-[repeat(2,min-content)]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-brand-nextjs"
@@ -199,12 +199,12 @@
               <path d="M15 12v-3" />
             </>
           </svg>
-          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100">
+          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100">
             NextJS
           </p>
         </div>
 
-        <div class="group flex h-min items-center gap-1">
+        <div class="group grid h-min grid-cols-1 place-items-center gap-1 min-[550px]:grid-cols-[repeat(2,min-content)]">
           <svg
             width="36"
             height="36"
@@ -216,12 +216,12 @@
               <path d="M8.358 20.162c-1.186-1.07-1.532-3.316-1.038-4.944.856 1.026 2.043 1.352 3.272 1.535 1.897.283 3.76.177 5.522-.678.202-.098.388-.229.608-.36.166.473.209.95.151 1.437-.14 1.185-.738 2.1-1.688 2.794-.38.277-.782.525-1.175.787-1.205.804-1.531 1.747-1.078 3.119l.044.148a3.158 3.158 0 0 1-1.407-1.188 3.31 3.31 0 0 1-.544-1.815c-.004-.32-.004-.642-.048-.958-.106-.769-.472-1.113-1.161-1.133-.707-.02-1.267.411-1.415 1.09-.012.053-.028.104-.045.165h.002zm-5.961-4.445s3.24-1.575 6.49-1.575l2.451-7.565c.092-.366.36-.614.662-.614.302 0 .57.248.662.614l2.45 7.565c3.85 0 6.491 1.575 6.491 1.575L16.088.727C15.93.285 15.663 0 15.303 0H8.697c-.36 0-.615.285-.784.727l-5.516 14.99z" />
             </>
           </svg>
-          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100">
+          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100">
             Astro
           </p>
         </div>
 
-        <div class="group flex h-min items-center gap-1">
+        <div class="group grid h-min grid-cols-1 place-items-center gap-1 min-[550px]:grid-cols-[repeat(2,min-content)]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-brand-golang"
@@ -243,7 +243,7 @@
               <path d="M5 12h-3" />
             </>
           </svg>
-          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100">
+          <p class="text-sm font-semibold opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100">
             Go
           </p>
         </div>
@@ -254,10 +254,11 @@
 
 <style>
   .scroller {
-    animation: scroll 15s linear infinite;
+    animation: scrollVertical 15s linear infinite;
   }
 
-  #scrollerContainer:hover .scroller {
+  #scrollerContainer:hover .scroller,
+  #scrollerContainer:active .scroller {
     animation-play-state: paused;
   }
 
@@ -271,12 +272,37 @@
     );
   }
 
-  @keyframes scroll {
+  @keyframes scrollVertical {
     from {
       transform: translateY(0);
     }
     to {
       transform: translateY(-100%);
+    }
+  }
+
+  @keyframes scrollHorizontal {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @media (max-width: 550px) {
+    .scroller {
+      animation: scrollHorizontal 15s linear infinite;
+    }
+
+    #scrollerContainer {
+      mask: linear-gradient(
+        90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent
+      );
     }
   }
 </style>
