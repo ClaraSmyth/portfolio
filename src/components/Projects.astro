@@ -9,11 +9,6 @@ const projects = [
     liveLink: "https://clarasmyth.github.io/shopping-cart",
     repoLink: "https://github.com/ClaraSmyth/shopping-cart",
     imgPath: "/src/assets/project-1.webp",
-    icons: {
-      icon1: "TypeScript",
-      icon2: "Tailwind",
-      icon3: "React",
-    },
   },
   {
     title: "CV Builder",
@@ -21,11 +16,6 @@ const projects = [
     liveLink: "https://clarasmyth.github.io/cv-application/",
     repoLink: "https://github.com/ClaraSmyth/cv-application",
     imgPath: "/src/assets/project-2.webp",
-    icons: {
-      icon1: "React",
-      icon2: "Sass",
-      icon3: null,
-    },
   },
   {
     title: "Battleship",
@@ -33,17 +23,13 @@ const projects = [
     liveLink: "https://clarasmyth.github.io/battleship/",
     repoLink: "https://github.com/ClaraSmyth/battleship",
     imgPath: "/src/assets/project-3.webp",
-    icons: {
-      icon1: "Html",
-      icon2: "Sass",
-      icon3: "JavaScript",
-    },
   },
 ];
 ---
 
 <section
-  class="relative mt-[220px] grid h-max min-h-min w-full grid-cols-1 grid-rows-3 justify-center justify-items-center overflow-x-clip"
+  id="aboutSection"
+  class="relative grid h-max min-h-min w-full grid-cols-1 grid-rows-3 justify-center justify-items-center overflow-x-clip pt-[220px]"
 >
   <ProjectsSvg />
 
@@ -52,7 +38,7 @@ const projects = [
       <div
         id={`card${index}`}
         style={{ gridRowStart: index + 1 }}
-        class="sticky top-0 z-10 col-start-1 col-end-1 grid h-screen w-full max-w-screen-lg items-center px-6"
+        class="sticky top-0 z-10 col-start-1 col-end-1 grid h-screen w-full max-w-screen-lg items-center p-6 min-[900px]:min-h-[800px]"
       >
         <ProjectCard index={index} project={project} />
       </div>
@@ -99,41 +85,39 @@ const projects = [
     visibility: "visible",
   });
 
-  ["#projectCardSvg0", "#projectCardSvg1", "#projectCardSvg2"].forEach(
-    (card) => {
-      inView(
-        card,
-        () => {
-          [".Icon1", ".Icon2", ".Icon3"].forEach((icon, index) => {
-            timeline(
+  ["#card0", "#card1", "#card2"].forEach((card, index) => {
+    inView(
+      card,
+      () => {
+        [".Icon1", ".Icon2", ".Icon3"].forEach((icon, index) => {
+          timeline(
+            [
               [
-                [
-                  `${card} ${icon} .Line1`,
-                  draw(1),
-                  { duration: 0.8, delay: index / 2 },
-                ],
-                [
-                  `${card} ${icon} .Line2`,
-                  draw(1),
-                  { duration: 0.8, at: "-0.7" },
-                ],
-                [
-                  `${card} ${icon} .Part1`,
-                  draw(1),
-                  { duration: 0.8, at: "-0.3" },
-                ],
-                [`${card} ${icon} .Part2`, draw(1), { duration: 0.8, at: "0" }],
+                `${card} ${icon} .Line1`,
+                draw(1),
+                { duration: 0.8, delay: index / 2 },
               ],
-              {
-                defaultOptions: {
-                  easing: "linear",
-                },
+              [
+                `${card} ${icon} .Line2`,
+                draw(1),
+                { duration: 0.8, at: "-0.7" },
+              ],
+              [
+                `${card} ${icon} .Part1`,
+                draw(1),
+                { duration: 0.8, at: "-0.3" },
+              ],
+              [`${card} ${icon} .Part2`, draw(1), { duration: 0.8, at: "0" }],
+            ],
+            {
+              defaultOptions: {
+                easing: "linear",
               },
-            );
-          });
-        },
-        { margin: "0px 0px -50% 0px", amount: 0.45 },
-      );
-    },
-  );
+            },
+          );
+        });
+      },
+      { margin: "0px 0px -99% 0px" },
+    );
+  });
 </script>

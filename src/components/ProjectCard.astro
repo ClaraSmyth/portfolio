@@ -2,6 +2,7 @@
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import ProjectCardSvg from "../components/ProjectCardSvg.astro";
+import ProjectCardIcons from "./ProjectCardIcons.astro";
 
 interface Props {
   index: number;
@@ -11,11 +12,6 @@ interface Props {
     liveLink: string;
     repoLink: string;
     imgPath: string;
-    icons: {
-      icon1: string | null;
-      icon2: string | null;
-      icon3: string | null;
-    };
   };
 }
 
@@ -24,8 +20,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/*.{jpeg,jpg,png,gif,webp}",
 );
 
-console.log(images);
-
 if (!images[project.imgPath])
   throw new Error(
     `"${project.imgPath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif,webp}"`,
@@ -33,21 +27,17 @@ if (!images[project.imgPath])
 ---
 
 <div
-  class="relative grid h-[600px] w-full grid-cols-2 items-center gap-6 justify-self-center rounded-3xl bg-gray-100 px-4 shadow-[rgba(149,157,165,0.2)_0px_8px_24px]"
+  class="relative grid h-full max-h-[600px] w-full items-center gap-6 justify-self-center rounded-3xl bg-gray-100 p-4 shadow-[rgba(149,157,165,0.2)_0px_8px_24px] md:grid-cols-2"
 >
   <div
-    class="flex h-60 w-96 flex-col justify-center gap-2 justify-self-end text-end"
+    class="flex w-full max-w-96 flex-col justify-center gap-2 justify-self-center text-center md:justify-self-end md:text-end"
   >
     <h2 class="text-2xl font-semibold">{project.title}</h2>
-    <div class="relative flex h-8 justify-end gap-2">
-      <div class="size-8" title={project.icons.icon3}></div>
-      <div class="size-8" title={project.icons.icon2}></div>
-      <div class="size-8" title={project.icons.icon1}></div>
-    </div>
+    <ProjectCardIcons index={index} />
     <p>
       {project.desc}
     </p>
-    <div class="flex justify-end gap-4">
+    <div class="flex justify-center gap-4 md:justify-end">
       <a
         href={project.liveLink}
         target="_blank"
