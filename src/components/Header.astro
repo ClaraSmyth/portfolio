@@ -1,9 +1,10 @@
 ---
 import HeaderSvg from "./HeaderSvg.astro";
+import MobileSvg from "./MobileSvg.astro";
 ---
 
 <header
-  class="relative grid h-screen min-h-[800px] w-full max-w-screen-lg content-center justify-items-center"
+  class="relative grid h-screen w-full max-w-screen-lg content-center justify-items-center min-[900px]:min-h-[800px]"
 >
   <div
     class="relative grid content-center justify-items-center gap-5 text-center"
@@ -34,11 +35,12 @@ import HeaderSvg from "./HeaderSvg.astro";
       <p>Northern Ireland</p>
     </div>
 
-    <p class="max-w-lg text-lg">
+    <p class="max-w-lg px-4 text-lg">
       I'm a full-stack developer who loves typescript and learning new
       technologies!
     </p>
   </div>
 
   <HeaderSvg />
+  <MobileSvg />
 </header>
