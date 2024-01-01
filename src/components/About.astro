@@ -3,11 +3,13 @@ import AboutSvg from "../components/AboutSvg.astro";
 import AboutScroller from "../components/AboutScroller.astro";
 ---
 
-<div class="relative grid h-screen w-full items-center justify-items-center">
+<div
+  class="relative grid h-screen min-h-[600px] w-full grid-rows-[minmax(0,1fr),min-content] items-center justify-items-center gap-4 overflow-x-clip"
+>
   <div
-    class="relative grid h-1/2 max-h-[800px] w-full max-w-5xl items-center bg-gray-100 pl-80"
+    class="relative grid h-3/4 max-h-[600px] w-full max-w-screen-lg grid-cols-[minmax(0,1fr),min-content] items-center justify-items-center gap-4 bg-gray-100 px-4 pl-[12%] max-[550px]:auto-rows-min max-[550px]:grid-cols-1 max-[550px]:px-8 max-[550px]:text-center"
   >
-    <div class="flex w-2/3 flex-col gap-2">
+    <div class="grid max-h-full w-full max-w-[420px] gap-2">
       <h2 class="text-3xl font-semibold">A little about me.</h2>
       <p>
         I’m a self taught developer who started learning to code back in May
@@ -21,9 +23,9 @@ import AboutScroller from "../components/AboutScroller.astro";
       </p>
     </div>
 
-    <div class="w-2/3">
+    <div class="w-full max-w-[420px]">
       <h3 class="text-2xl font-semibold">Contact.</h3>
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-2 max-[550px]:justify-center">
         <p>clarasmyth.work@gmail.com</p>
         <button
           id="copyButton"
@@ -72,7 +74,9 @@ import AboutScroller from "../components/AboutScroller.astro";
     <AboutScroller />
   </div>
 
-  <div class="absolute flex w-full max-w-screen-lg gap-2 self-end pb-2 pl-80">
+  <div
+    class="relative flex w-full max-w-[420px] justify-center gap-2 self-end pb-2"
+  >
     <p class="text-sm">
       Designed & Built by <span class="font-semibold">me!</span>
     </p>
